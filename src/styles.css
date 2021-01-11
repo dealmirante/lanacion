@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+/* navigation */
+.nav-main {
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 10px;
+}
+
+.nav-menu-right {
+    align-items: flex-end;
+}
+
+.nav-menu-left {
+    align-items: flex-start;
+}
+
+.nav-main ul {
+    display: flex;
+}
+
+.nav-main ul li {
+    padding: 10px;
+}
+
+.logo-nacion {
+    width: 320px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.log-nac {
+    width: 280;
+    height: 20px;
+    overflow: hidden;
+}
+
+.btn-warning{
+    background-color: #ffff24;
+    border: 1px solid #cccccc;
+    color: #000000;    
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    border: 1px solid #0074c4;
+    color: #0074c4;
+}
+
+/* News Cards */
+.news-cards {    
+    padding: 10px 0;
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: left;
+}
+
+.news-cards img {
+    width: 330px;
+    height: 220px;
+}
+
+.news-cards h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.card-grid {
+    display: flex;    
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+
+/* footer */
+
+.footer{
+    padding: 10% 0;
+}
+
+.sec-main {
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 10px;
+}
+
+.sec-menu-right {
+    align-items: flex-end;
+}
+
+.sec-menu-left {
+    align-items: flex-start;
+}
+
+.sec-main ul {
+    display: flex;
+}
+
+.nav-main ul li {
+    padding: 10px;
+}
+
+.logo-nacion {
+    width: 320px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.sec-menu-left-2 {
+    align-items: flex-start;
+    font-size: 13px;
+}
+
+.sec-menu-right-2 {
+    align-items: flex-end;
+    font-size: 13px;
+}
+
+
