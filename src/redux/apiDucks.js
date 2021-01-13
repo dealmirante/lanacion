@@ -1,69 +1,40 @@
-import axios from 'axios';
+import axios from "axios";
 
 // constantes
 const InitialState = {
-    array: []    
-}
+  array: [],
+};
 
 //types
-const OBTENER_NOTAS = 'OBTENER_NOTAS';
-const BUSCAR_NOTAS = 'BUSCAR_NOTAS';
+const OBTENER_NOTAS = "OBTENER_NOTAS";
 
 // reducer
 export default function apiReducer(state = InitialState, action) {
-    switch (action.type) {
-        case OBTENER_NOTAS:
-            
-            return {
-                ...state, 
-                array: action.payload
-            }
-        
-        case BUSCAR_NOTAS:
-            
-            return {
-                ...state,
-                array: action.payload.array
-            }            
-        
-        default: return state;
-    }
+  switch (action.type) {
+    case OBTENER_NOTAS:
+      return {
+        ...state,
+        array: action.payload,
+      };
+
+    default:
+      return state;
+  }
 }
 
 // acciones
-export const obtenerNotasAccion = () => async (dispatch, getState) => {    
+export const obtenerNotasAccion = () => async (dispatch, getState) => {
+  try {
+    const arr = await axios.get(`https://api-test-ln.herokuapp.com/articles`);
+    const arr1 = arr.data.articles.filter((element) =>
+      element.subtype.includes("7")
+    );
 
-    try {
-        
-        const arr = await axios.get(`https://api-test-ln.herokuapp.com/articles`);        
-        const arr1 = arr.data.articles.filter(element => element.subtype.includes("7"));              
-        
-        dispatch({
-            type: OBTENER_NOTAS,            
-            payload: arr1
-        })
-
-    } catch(error) {
-        console.log(error);
-    }
-}
-
-export const buscarPersonaje = (name) => async(dispatch, getState) => {    
-    
-    const array1 = getState().Notas.array;
-    const array2 = array1.filter(element => element.name.toLowerCase().includes(name));
-
-    try {
-            
-        dispatch({
-            type: BUSCAR_NOTAS,
-            payload: {
-               array: array2               
-            }
-        })
-        
-    } catch (error) {
-        console.log(error)
-        
-    }
-}
+    dispatch({
+      type: OBTENER_NOTAS,
+      payload: arr1,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
